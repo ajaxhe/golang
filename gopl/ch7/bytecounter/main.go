@@ -15,7 +15,6 @@ func main() {
 	fmt.Println(c)
 	var name = "dabao"
 	c = 0
-	fmt.Fprintf(&c, "hello, %s", name)
-	fmt.Println(c)
-	fmt.Println("vim-go")
+	fmt.Fprintf(&c, "hello, %s", name) // 这里会调用write函数
+	fmt.Println(c)                     // 这里仅仅是输出c的值而已
 }

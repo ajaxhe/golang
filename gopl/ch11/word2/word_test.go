@@ -1,22 +1,21 @@
 package word
 
-import (
-	"math/rand"
-	"testing"
-	"time"
-)
+import "testing"
 
 func TestIsPalindrome(t *testing.T) {
 	var tests = []struct {
 		input string
 		want  bool
 	}{
-		{"ajaxhe", false},
-		{"zhuzhu", false},
-		{"aha", true},
-		{"Et se resservir, ivresse reste.", true},
+		/*
+			{"aha", true},
+				{"ajaxhe", false},
+				{"zhuzhu", false},
+				{"Et se resservir, ivresse reste.", true},
+		*/
 		{"上海自来水来自海上", true},
-		{"冷水滩滩滩水冷", true},
+		{"上海自测海上", true},
+		//{"冷水滩滩滩水冷", true},
 	}
 
 	for _, test := range tests {
@@ -33,6 +32,7 @@ func BenchmarkIsPalindrome(b *testing.B) {
 	}
 }
 
+/*
 func randomPalindrome(rng *rand.Rand) string {
 	n := rng.Intn(25)
 	runes := make([]rune, n)
@@ -55,3 +55,4 @@ func TestRandomPalindrome(t *testing.T) {
 		}
 	}
 }
+*/
